@@ -1,0 +1,9 @@
+: 1
+name: inih
+version: 53.0.0-a.0.z
+summary: Simple .INI file parser in C, good for embedded systems
+license: BSD-3-Clause
+description-file: upstream/README.md
+src-url: https://github.com/benhoyt/inih
+depends: * build2 >= 0.14.0
+depends: * bpkg >= 0.14.0

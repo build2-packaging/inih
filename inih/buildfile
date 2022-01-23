@@ -1,0 +1,36 @@
+./: lib{inih}: libul{inih}: {c h}{ini}
+
+lib{inih}: def{inih}: include = ($c.target.system == 'win32-msvc')
+def{inih}: libul{inih}
+
+if ($c.target.system == 'mingw32')
+{
+  cc.loptions += -Wl,--export-all-symbols
+}
+
+lib{inih}:
+{
+    cc.export.poptions = "-I$src_base"
+}
+
+./: lib{inireader}: libul{inireader}: cpp/{cxx hxx}{INIReader} lib{inih}
+
+lib{inireader}: def{inireader}: include = ($cxx.target.system == 'win32-msvc')
+def{inireader}: libul{inireader}
+
+lib{inireader}:
+{
+    cxx.export.poptions = "-I$src_base/cpp"
+}
+
+h{*}:
+{
+    install = include/
+    install.subdirs = false
+}
+
+cpp/hxx{*}:
+{
+    install = include/
+    install.subdirs = false
+}

@@ -1,0 +1,9 @@
+using c
+
+h{*}: extension = h
+c{*}: extension = c
+
+using cxx
+
+hxx{*}: extension = h
+cxx{*}: extension = cpp

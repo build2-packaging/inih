@@ -1,0 +1,6 @@
+$out_root/
+{
+  include inih/
+}
+
+export $out_root/inih/$import.target

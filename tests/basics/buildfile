@@ -1,0 +1,5 @@
+import libs = inih%lib{inih}
+import libs_cxx = inih%lib{inireader}
+
+./: exe{test}: c{driver} $libs
+./: exe{test_cxx}: cxx{driver_cxx} $libs_cxx

@@ -1,0 +1,10 @@
+using c
+
+h{*}: extension = h
+c{*}: extension = c
+
+using cxx
+
+exe{*}: test = true
+
+test.target = $c.target
